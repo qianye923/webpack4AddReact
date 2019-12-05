@@ -7,16 +7,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");  //这个插件不兼容style-loader  开发环境下使用style-loader，在生产环境分离css文件，可以这么配置：
 const devMode = process.env.NODE_ENV !== 'production'
 
-const MODULE = 'main';
+const MODULE = 'netbar';
 
 module.exports = {
     entry: {
-        // index: './src/pages/main/main_guide/index.js'
-        index:"./src/index.js"
+        main_guide: './src/pages/main/main_guide/index.js',
+         netbar:"./src/pages/netbar/netbar_admin_task/index.js"
     },
     output: {
-        filename: devMode ? '[name].[hash:8].js' : '[name].[chunkhash:8].js',       //数字8表示取hash标识符的前八位
-        chunkFilename: devMode ? '[name].[hash:8].js' : '[name].[chunkhash:8].js',  //异步模块的文件输出名
+        filename: devMode ? '[name].[hash:8].js' : '[name].[chunkhash:5].js',       //数字8表示取hash标识符的前八位
+        chunkFilename: devMode ? '[name].[hash:8].js' : '[name].[chunkhash:5].js',  //异步模块的文件输出名
         path: path.resolve(__dirname, 'dist')
     },
     devtool: 'source-map',   // 会生成对于调试的完整的.map文件，但同时也会减慢打包速度
@@ -62,12 +62,12 @@ module.exports = {
             filename: "[name].[contenthash:8].css",
             chunkFilename: "[name].[contenthash:8].css"
         }),
-        new AutoWebPlugin(  // 入口点检测
-            './src/pages/'+MODULE+'/',
+        new AutoWebPlugin(
+            './src/pages/' + MODULE + '/',
             {
-              filename: function(pageName){
-                return pageName
-              },
+                filename: function (pageName) {
+                    return pageName
+                },
                 template: (pageName) => {
                     const template = path.resolve('./public', `${pageName}.html`);
                     if (fs.existsSync(template)) {
@@ -77,12 +77,14 @@ module.exports = {
                     }
                 },
                 commonsChunk: {
-                   name: MODULE+'_common', // 必填属性,输出的文件名称
+                    name: MODULE + '_common', // 必填属性,输出的文件名称
                 }
             }
         ),
         // new HtmlWebpackPlugin({
-        //     title: 'index'
+        //     title: 'index',
+        //     template: './src/index.html',
+        //     filename: 'off.html'
         // }),
         // new webpack.HashedModuleIdsPlugin()
     ]

@@ -1,0 +1,20 @@
+a{text-decoration: none;color:#000;}
+
+
+.top-tabBar{
+    height:50px;width:100%;line-height:50px;
+    background-color: rgb(231, 223, 223);
+    .topbar-contain{
+        width:1000px;height:100%;
+        margin:auto;
+        a{display:inline-block;
+            height:98%;
+           padding:0px 20px;
+           &.act{
+            color: #3c3c3c;
+            border-bottom: 1px solid #0084f2;
+            box-sizing: border-box;
+           }
+        }
+    }
+}
