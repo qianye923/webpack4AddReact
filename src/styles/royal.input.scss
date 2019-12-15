@@ -1,0 +1,238 @@
+$font-middle:16px;
+$grey_300:rgb(65, 55, 55);
+$blue_400:rgb(80, 198, 228);
+$grey_150:rgb(94, 175, 221);
+
+.form-input-authcode {
+    margin-left: 147px;
+}
+
+.password-forgot {
+    position: absolute;
+    font-size: $font-middle;
+    text-decoration: none;
+    right: 300px;
+    top: 7px;
+}
+
+
+.carrier-table-container {
+    margin-top: 30px;
+    padding: 24px;
+
+    .carrier-table {
+        width: 491px;
+        margin-bottom: 20px;
+        background: #fff;
+    }
+
+    p {}
+}
+
+.text-container {
+    .text-name {
+        font-size: $font-middle;
+        color: $grey_300;
+        text-align: right;
+
+    }
+
+    .text-content {
+        margin-left: 43px;
+
+        p {
+
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+
+        a {
+            font-size: $font-middle;
+
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 16px;
+
+            text-decoration: none;
+        }
+    }
+}
+
+.change-container {
+    padding: 30px 0;
+
+    .input-form {
+        a.login-button {
+            margin: 0;
+        }
+
+        input {
+            text-indent: 10px;
+            text-align: left;
+        }
+
+        a.forgot-royal-pw {
+            display: inline-block;
+            vertical-align: middle;
+
+            line-height: 28px;
+            margin-left: 14px;
+            text-decoration: none;
+            border: none;
+            background: #fff;
+            text-align: left;
+            padding: 0;
+        }
+
+        a.get-auth-num {
+            display: inline-block;
+            vertical-align: middle;
+            height: 28px;
+
+            text-align: center;
+            text-decoration: none;
+            line-height: 28px;
+            padding: 0 11px;
+            margin-left: 14px;
+
+            border-radius: 2px;
+
+            &.disable {
+                background: $grey_150;
+
+            }
+        }
+
+        input {
+            width: 210px;
+
+            &:focus {
+                border: 1px solid rgb(150, 122, 122);
+            }
+        }
+
+        p {
+            height: 28px;
+            line-height: 28px;
+            color: $grey_300;
+
+        }
+    }
+
+    .login-button {
+
+
+        margin-left: 0;
+    }
+}
+
+.pc-num-container {
+    position: relative;
+    padding-bottom: 10px;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+
+    h2 {
+        position: relative;
+        margin-right: 15px;
+        display: inline-block;
+        vertical-align: top;
+
+
+        em {
+
+            font-family: Dinlight;
+        }
+    }
+}
+
+.pc-num-tips {
+
+    line-height: 18px;
+    margin-top: 10px;
+}
+
+
+
+.pc-management-top {
+    margin-top: 15px;
+
+    .status-hub {
+        .input-wrap-small {
+            width: 35px;
+        }
+    }
+
+    .btn-confirm {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .onClick-bind {
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.pc-num-select {
+    .rc-select-selection--single {
+        height: 24px;
+        line-height: 24px;
+
+        &:hover {
+            border: 1px solid gray;
+        }
+    }
+}
+
+.royal-register-container .input-container .input-form {
+    .input-content {
+        input {
+            text-align: left;
+
+            &.phone-auth-num {
+                width: 170px;
+                margin: 0 0 10px 0;
+            }
+        }
+    }
+}
+
+.smsAuth-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.royal-table-container {
+    .rc-table .rc-table-thead {
+        border: none;
+
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: row;
+
+    .form-col-8 {
+        flex: 1;
+    }
+}
+
+.card {
+    background-color: rgb(207, 200, 200);
+}

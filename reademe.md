@@ -22,3 +22,13 @@
 
      日志
       a20191206    netbar_admin_task.html
+
+ 
+ 公司做
+
+   royal 内    http://127.0.0.1:9999/royal_account_index.html   【12，15】
+
+    12月15日 
+      rc-component 中的 rc-table插件
+      sweetalert  提示框插件 {弹框}
+
