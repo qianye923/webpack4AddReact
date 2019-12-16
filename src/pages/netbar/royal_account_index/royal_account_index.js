@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import Table from "rc-table";
 
-import "../../../styles/royal.input.scss";
+import "../../../styles/royalInput.scss";
 class App extends React.Component {
   constructor(props) {
     super(props);

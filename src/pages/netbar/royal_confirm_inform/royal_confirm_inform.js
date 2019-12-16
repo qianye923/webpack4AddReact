@@ -1,33 +1,60 @@
 import React from "react";
 import ReactDom from "react-dom";
+import Dialog from "rc-dialog";
+
+import "../../../styles/royalInput.scss";
+import "../../../../node_modules/rc-dialog/assets/index.css";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nb: this.props.info
+      nb: this.props.info,
+      visible: false,
+      showImg: ""
     };
     this.showBarImg = this.showBarImg.bind(this);
+    this.Closecallback = this.Closecallback.bind(this);
   }
+
   showBarImg() {
-    console.log("fail");
+    this.setState({
+      visible: !this.state.visible,
+      showImg: this.state.nb.info.bar_img_url
+    });
   }
+  // 关闭时方法
+  Closecallback() {
+    this.setState({
+      visible: false
+    });
+  }
+
   componentDidMount() {
     console.log(1234);
-    console.log(window.data);
-    console.log(this.state.nb.info.accounts);
+
+    console.log(this.state.nb.info.netbar_name);
   }
   render() {
     var nb = this.props.info;
+    let title = "图片显示弹框";
     return (
       <div>
+        <Dialog
+          title={title}
+          onClose={this.Closecallback}
+          visible={this.state.visible}
+        >
+          <img src={this.state.showImg} alt="" />
+        </Dialog>
+
         <div
           className={`config-form-wrap config-event-table config-confirm-inform`}
         >
           <ul className="rc-table-tbody">
             <li>
               <div className="column-show-small">网吧名称：</div>
-              <div className="column-show-big">kaixin</div>
+              <div className="column-show-big">{nb.info.netbar_name}</div>
             </li>
             <li>
               <div className="column-show-small">网关帐号：</div>
